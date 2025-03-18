@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Lander - Get Your iPhone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="welcome-screen" class="screen">
+    <h1>Вітаємо в Tesco!</h1>
+    <p>У вас є шанс виграти iPhone 14 Pro! Відповідайте на кілька запитань і завершіть гру.</p>
+    <button id="start-questions-btn">Почати</button>
+  </div>
+
+  <div id="question-screen" class="screen" style="display: none;">
+    <h2>Запитання 1</h2>
+    <p>Яка столиця Великої Британії?</p>
+    <button class="question-btn" data-answer="London">Лондон</button>
+    <button class="question-btn" data-answer="Paris">Париж</button>
+    <button class="question-btn" data-answer="Berlin">Берлін</button>
+  </div>
+
+  <div id="game-screen" class="screen" style="display: none;">
+    <h2>Гра: Знайди пару!</h2>
+    <div class="color-matching-game">
+      <div class="color-box" style="background-color: red;"></div>
+      <div class="color-box" style="background-color: blue;"></div>
+    </div>
+    <button id="end-game-btn">Завершити гру</button>
+  </div>
+
+  <div id="final-screen" class="screen" style="display: none;">
+    <h2>Вітаємо!</h2>
+    <p>Ви виграли iPhone 14 Pro!</p>
+    <p>Щоб отримати свій приз, будь ласка, сплатіть 2 фунти стерлінги.</p>
+    <button id="pay-btn">Сплатити 2 фунти</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
