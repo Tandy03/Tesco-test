@@ -16,7 +16,9 @@
     </header>
 
     <div class="container">
-        <div id="welcomeMessage">
+        <div id="welcomeMessage" class="hidden">
+            <div>Answer few quick questions to win!</div>
+            <br>
             <button onclick="startSurvey()">Start Survey</button>
         </div>
 
@@ -49,11 +51,6 @@
                     <div class="choice" onclick="nextQuestion(4)">No</div>
                 </div>
             </div>
-        </div>
-
-        <div id="game" class="hidden">
-            <p>Answer 3 quick questions to win!</p>
-            <button onclick="finishGame()" class="hidden" id="doneButton">I'm done</button>
         </div>
 
         <div id="prizePage" class="hidden">
