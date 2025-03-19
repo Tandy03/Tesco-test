@@ -1,31 +1,30 @@
-document.getElementById('start-questions-btn').addEventListener('click', function() {
-    document.getElementById('welcome-screen').style.display = 'none';
-    document.getElementById('question-screen').style.display = 'block';
-  });
-  
-  let correctAnswers = 0;
-  
-  const questionBtns = document.querySelectorAll('.question-btn');
-  questionBtns.forEach(button => {
-    button.addEventListener('click', function() {
-      if (this.dataset.answer === 'London') {
-        correctAnswers++;
-      }
-      nextQuestion();
-    });
-  });
-  
-  function nextQuestion() {
-    document.getElementById('question-screen').style.display = 'none';
-    document.getElementById('game-screen').style.display = 'block';
-  }
-  
-  document.getElementById('end-game-btn').addEventListener('click', function() {
-    document.getElementById('game-screen').style.display = 'none';
-    document.getElementById('final-screen').style.display = 'block';
-  });
-  
-  document.getElementById('pay-btn').addEventListener('click', function() {
-    window.location.href = "payment-url-here";
-  });
-  
+let currentQuestion = 1;
+
+function startSurvey() {
+    document.getElementById("welcomeMessage").classList.add("hidden");
+    document.getElementById("survey").classList.remove("hidden");
+
+    document.getElementById(`question${currentQuestion}`).classList.remove("hidden");
+}
+
+function nextQuestion(questionNumber) {
+    document.getElementById(`question${currentQuestion}`).classList.add("hidden");
+
+    currentQuestion = questionNumber + 1;
+
+    if (currentQuestion <= 4) {
+        document.getElementById(`question${currentQuestion}`).classList.remove("hidden");
+    } else {
+        document.getElementById("survey").classList.add("hidden");
+        document.getElementById("game").classList.remove("hidden");
+    }
+}
+
+function finishGame() {
+    document.getElementById("doneButton").style.display = "block"; // Show the "I'm done" button
+}
+
+function claimPrize() {
+    document.getElementById("prizePage").classList.add("hidden");
+    document.getElementById("thankYouPage").classList.remove("hidden");
+}

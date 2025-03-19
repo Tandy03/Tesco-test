@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pre-Lander - Get Your iPhone</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Prize Offer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo" width="20%">
+        </div>
+        <h1>Welcome to Our Special Offer!</h1>
+        <p>Answer a few quick questions, play a fun game, and you could win an iPhone 14 Pro!</p>
+    </header>
 
-  <div id="welcome-screen" class="screen">
-    <h1>Вітаємо в Tesco!</h1>
-    <p>У вас є шанс виграти iPhone 14 Pro! Відповідайте на кілька запитань і завершіть гру.</p>
-    <button id="start-questions-btn">Почати</button>
-  </div>
+    <div class="container">
+        <div id="welcomeMessage">
+            <button onclick="startSurvey()">Start Survey</button>
+        </div>
 
-  <div id="question-screen" class="screen" style="display: none;">
-    <h2>Запитання 1</h2>
-    <p>Яка столиця Великої Британії?</p>
-    <button class="question-btn" data-answer="London">Лондон</button>
-    <button class="question-btn" data-answer="Paris">Париж</button>
-    <button class="question-btn" data-answer="Berlin">Берлін</button>
-  </div>
+        <div id="survey" class="hidden">
+            <div id="question1" class="question">
+                <span>Question 1: How often do you shop for groceries?</span>
+                <div class="choices">
+                    <div class="choice" onclick="nextQuestion(1)">Once a week</div>
+                    <div class="choice" onclick="nextQuestion(1)">Once a month</div>
+                </div>
+            </div>
+            <div id="question2" class="question hidden">
+                <span>Question 2: What is your favorite type of food?</span>
+                <div class="choices">
+                    <div class="choice" onclick="nextQuestion(2)">Vegetarian</div>
+                    <div class="choice" onclick="nextQuestion(2)">Meat lover</div>
+                </div>
+            </div>
+            <div id="question3" class="question hidden">
+                <span>Question 3: Do you prefer shopping online or in-store?</span>
+                <div class="choices">
+                    <div class="choice" onclick="nextQuestion(3)">Online</div>
+                    <div class="choice" onclick="nextQuestion(3)">In-store</div>
+                </div>
+            </div>
+            <div id="question4" class="question hidden">
+                <span>Question 4: Do you use mobile apps for shopping?</span>
+                <div class="choices">
+                    <div class="choice" onclick="nextQuestion(4)">Yes</div>
+                    <div class="choice" onclick="nextQuestion(4)">No</div>
+                </div>
+            </div>
+        </div>
 
-  <div id="game-screen" class="screen" style="display: none;">
-    <h2>Гра: Знайди пару!</h2>
-    <div class="color-matching-game">
-      <div class="color-box" style="background-color: red;"></div>
-      <div class="color-box" style="background-color: blue;"></div>
+        <div id="game" class="hidden">
+            <p>Answer 3 quick questions to win!</p>
+            <button onclick="finishGame()" class="hidden" id="doneButton">I'm done</button>
+        </div>
+
+        <div id="prizePage" class="hidden">
+            <h2>Congratulations!</h2>
+            <p>You've won an iPhone 14 Pro!</p>
+            <img src="images/iphone14.png" alt="iPhone 14 Pro" width="200px">
+            <p>To claim your prize, pay just £2!</p>
+            <button onclick="claimPrize()">Claim Now</button>
+        </div>
+
+        <div id="thankYouPage" class="hidden">
+            <h2>Thank You for Your Payment!</h2>
+            <p>Your iPhone 14 Pro will be on its way shortly.</p>
+        </div>
     </div>
-    <button id="end-game-btn">Завершити гру</button>
-  </div>
 
-  <div id="final-screen" class="screen" style="display: none;">
-    <h2>Вітаємо!</h2>
-    <p>Ви виграли iPhone 14 Pro!</p>
-    <p>Щоб отримати свій приз, будь ласка, сплатіть 2 фунти стерлінги.</p>
-    <button id="pay-btn">Сплатити 2 фунти</button>
-  </div>
+    <footer>
+        <p>Offer expires soon! Act fast!</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
